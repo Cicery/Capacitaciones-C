@@ -10,38 +10,34 @@ namespace My_WS_WCF
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
     [ServiceContract]
-    public interface IService1
+    public interface IWSPersonas
     {
 
         [OperationContract]
-        string GetData(int value);
+        Persona obtenerPersona(string Identificacion);
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: agregue aquí sus operaciones de servicio
     }
 
 
+
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     [DataContract]
-    public class CompositeType
+    public class Persona : BaseRespuesta
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
         [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        public string nombre { get; set; }
+        public int edad { get; set; }
 
+    }
+
+    [DataContract]
+    public class BaseRespuesta
+    {
         [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        public string mensajeRespuesta { get; set; }
+        [DataMember]
+        public string error { get; set; }
     }
 }

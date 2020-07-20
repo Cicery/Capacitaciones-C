@@ -10,24 +10,23 @@ namespace My_WS_WCF
 {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
     // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-    public class Service1 : IService1
+    public class WSPersonas : IWSPersonas
     {
-        public string GetData(int value)
+        public Persona obtenerPersona(string Identificacion)
         {
-            return string.Format("You entered: {0}", value);
-        }
+            if (Identificacion == "0")
+            {
+                return new Persona() { nombre = "Felipe", edad = 10 };
+            }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
+            else if (Identificacion == "0")
             {
-                throw new ArgumentNullException("composite");
+                return new Persona() { nombre = "Pati", edad = 25 };
             }
-            if (composite.BoolValue)
+            else
             {
-                composite.StringValue += "Suffix";
+                return new Persona { error = "Persona no encontrada" };
             }
-            return composite;
         }
     }
 }

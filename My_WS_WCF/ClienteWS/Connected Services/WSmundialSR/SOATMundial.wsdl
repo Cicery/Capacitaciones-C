@@ -1,0 +1,4463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mundialseguros.com.co/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mundialseguros.com.co/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mundialseguros.com.co/">
+      <s:element name="consultarClases">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarClasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarClasesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarDepartamentos">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarDepartamentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarDepartamentosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarFormulariosDisponibles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSuc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codPtoVta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarFormulariosDisponiblesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarFormulariosDisponiblesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarFormulariosExpedir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSuc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codPtoVta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarFormulariosExpedirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarFormulariosExpedirResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoBD">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarInfoBDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarInfoBDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoFormulario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoFormularioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarInfoFormularioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoFormularioExp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoFormularioExpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarInfoFormularioExpResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoTomador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nroDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoTomadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarInfoTomadorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoVehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarInfoVehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarInfoVehiculoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarLineas">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarLineasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarLineasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarLineasMarca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codMarcaMinTrans" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarLineasMarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarLineasMarcaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarMarcas">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarMarcasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarMarcasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarMotivosAnulacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarMotivosAnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarMotivosAnulacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarMotivosReemplazo">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarMotivosReemplazoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarMotivosReemplazoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarMunicipios">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarMunicipiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarMunicipiosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarMunicipiosDpto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codDpto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarMunicipiosDptoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarMunicipiosDptoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarOcupaciones">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarOcupacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarOcupacionesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarServicios">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarServiciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarServiciosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTarifas">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarTarifasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTarifasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTiposDireccion">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarTiposDireccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTiposDireccionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTiposDocumento">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarTiposDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTiposDocumentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTiposEmpresa">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarTiposEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTiposEmpresaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTiposPersona">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarTiposPersonaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTiposPersonaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarTiposTelefono">
+        <s:complexType />
+      </s:element>
+      <s:element name="consultarTiposTelefonoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTiposTelefonoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarEstadoFormulario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarEstadoFormularioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarEstadoFormularioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarUltEstadoFormulario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarUltEstadoFormularioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarUltEstadoFormularioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarVigenciaPlaca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarVigenciaPlacaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarVigenciaPlacaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarPlacaTarifaPais">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pais" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tarifa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="servicio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarPlacaTarifaPaisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="validarPlacaTarifaPaisResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generarTasaRunt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="codGrupoEndo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generarTasaRuntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="generarTasaRuntResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarCartera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codTipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarCarteraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarCarteraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarPapeleriaIntermediario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cntPolizas" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txtObservaciones" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarPapeleriaIntermediarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SolicitarPapeleriaIntermediarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPuntosVentaPapeleria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPuntosVentaPapeleriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPuntosVentaPapeleriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarRangosPapeleriaDisponible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarRangosPapeleriaDisponibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarRangosPapeleriaDisponibleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarRangosPapeleriaAsignados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codPtoVta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarRangosPapeleriaAsignadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarRangosPapeleriaAsignadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarConvenioAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codSuc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codPtoVta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarConvenioAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarConvenioAPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarcntAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nroDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarcntAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="consultarcntAPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFormularioAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFormularioAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarFormularioAPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTiposPolizaAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vigencia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codSuc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codAgente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codPtoVta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTiposPolizaAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarTiposPolizaAPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInfoTomadorAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codTipoDoc" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInfoTomadorAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInfoTomadorAPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarExpedicionPoliza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nroFormulario" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="codGrupoEndo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmarExpedicionPolizaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarExpedicionPolizaResult" type="tns:EstadoExpedicionPoliza" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EstadoExpedicionPoliza">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpedicionExitosa" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="expedirPolizaXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="expedirPolizaXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="expedirPolizaXMLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularPoliza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datosVehiculo" type="tns:DatosVehiculoTarifa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosVehiculoTarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Clase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cilindraje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pasajeros" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInicioVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaFinVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoAgente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoPuntoVenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalcularPolizaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcularPolizaResult" type="tns:DatosTarifa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosTarifa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaExpedicion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInicioVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaFinVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorPrima" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorContribucion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorTasaRUNT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorDescuento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorTotalPoliza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorTotalPagar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultadoExito" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiasVigencia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codEstadoFecFasecolda" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalcularPolizaCortoPlazo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datosVehiculo" type="tns:DatosVehiculo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosVehiculo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Clase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cilindraje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pasajeros" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInicioVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaFinVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoAgente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoPuntoVenta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalcularPolizaCortoPlazoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcularPolizaCortoPlazoResult" type="tns:DatosTarifa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInfoVehiculoRunt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="puntoVta" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInfoVehiculoRuntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInfoVehiculoRuntResult" type="tns:InformacionVehiculo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InformacionVehiculo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idConsulta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="snConsultaRuntExitosa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observacionesServicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idTipoServicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipoServicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idClaseVehiculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="claseVehiculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idMarca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idLinea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="linea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aaaa_modelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="noSerie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="noMotor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="noChasis" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="noVin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnt_cc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="divipola" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnt_toneladas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pesoBrutoVehicular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cnt_ocupantes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codMarcaSise" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codLineaSise" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codClaseSise" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="homologaciones" type="tns:ArrayOfHomologacionClaseMarcaLineaServicio" />
+          <s:element minOccurs="0" maxOccurs="1" name="idTipoCarroceria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipoCarroceria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idTipoCombustible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipoCombustible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="estadoDelVehiculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="organismoTransito" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHomologacionClaseMarcaLineaServicio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HomologacionClaseMarcaLineaServicio" nillable="true" type="tns:HomologacionClaseMarcaLineaServicio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HomologacionClaseMarcaLineaServicio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="clase" type="tns:TauClaseSoat" />
+          <s:element minOccurs="0" maxOccurs="1" name="codMarcaSise" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codLineaSise" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codDestinoSise" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TauClaseSoat">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="codClase" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="txtDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codTipoVehMinTrans" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarInfoVehiculoRuntDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="puntoVta" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInfoVehiculoRuntDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInfoVehiculoRuntDocResult" type="tns:InformacionVehiculoDoc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InformacionVehiculoDoc">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:InformacionVehiculo">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Propietarios" type="tns:ArrayOfPropietario" />
+              <s:element minOccurs="0" maxOccurs="1" name="noPlaca" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropietario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Propietario" nillable="true" type="tns:Propietario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Propietario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="tipoDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="noDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreCompleto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="apellido2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="direcciones" type="tns:ArrayOfDireccion" />
+          <s:element minOccurs="0" maxOccurs="1" name="celular" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDireccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Direccion" nillable="true" type="tns:Direccion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Direccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idDepartamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idCiudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewConsultarInfoVehiculoRuntDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="puntoVta" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_agente" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewConsultarInfoVehiculoRuntDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewConsultarInfoVehiculoRuntDocResult" type="tns:ConsultaInfoRuntWSResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConsultaInfoRuntWSResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="vehiculos" type="tns:ArrayOfInformacionVehiculoDoc" />
+          <s:element minOccurs="0" maxOccurs="1" name="estadoConsultaRunt" type="tns:EstadoConsulta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInformacionVehiculoDoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InformacionVehiculoDoc" nillable="true" type="tns:InformacionVehiculoDoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EstadoConsulta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="consultaExitosa" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="codEstado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descEstado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaVehiculoRCE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="puntoVta" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaVehiculoRCEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaVehiculoRCEResult" type="tns:InfoBasicaRce" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoBasicaRce">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="infoVehiculo" type="tns:InformacionVehiculo" />
+          <s:element minOccurs="1" maxOccurs="1" name="validaParaEmitir" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoFasecolda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reglasRce" type="tns:ResultadoValidacionReglasRCE" />
+          <s:element minOccurs="1" maxOccurs="1" name="snConsultaVehiculoExitosa" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="observacionesServicio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResultadoValidacionReglasRCE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="_arrayCoberturas" type="tns:ArrayOfCoberturasRCE" />
+          <s:element minOccurs="1" maxOccurs="1" name="codTarifaSoat" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="modelo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ptoVta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="arraySumAsegCoberturas" type="tns:ArrayOfDouble" />
+          <s:element minOccurs="1" maxOccurs="1" name="primaAs" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="primaAm" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="primaBaseIva" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="primaTotal" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="estadoProcesoValidacion" type="tns:EstadoProceso" />
+          <s:element minOccurs="1" maxOccurs="1" name="pjeIva" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="iva" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="regla" type="tns:ReglaRCE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCoberturasRCE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CoberturasRCE" nillable="true" type="tns:CoberturasRCE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CoberturasRCE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomCobertura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aplicaTxt" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="snAplica" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="sumaAsegurada" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDouble">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="double" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EstadoProceso">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="procesadoExitoso" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoSise" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="codError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReglaRCE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idRegla" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="codTarifa" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="regla" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExpedirPolizaRcYAp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jsonData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedirPolizaRcYApResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpedirPolizaRcYApResult" type="tns:EstadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarArchivoPolElectronica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="txt_patente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nro_doc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_agente" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarArchivoPolElectronicaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DescargarArchivoPolElectronicaSoapClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="txt_patente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nro_doc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cod_agente" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarArchivoPolElectronicaSoapClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescargarArchivoPolElectronicaSoapClientResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="EstadoExpedicionPoliza" nillable="true" type="tns:EstadoExpedicionPoliza" />
+      <s:element name="InformacionVehiculo" nillable="true" type="tns:InformacionVehiculo" />
+      <s:element name="InformacionVehiculoDoc" nillable="true" type="tns:InformacionVehiculoDoc" />
+      <s:element name="ConsultaInfoRuntWSResponse" nillable="true" type="tns:ConsultaInfoRuntWSResponse" />
+      <s:element name="InfoBasicaRce" nillable="true" type="tns:InfoBasicaRce" />
+      <s:element name="EstadoProceso" nillable="true" type="tns:EstadoProceso" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarClasesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarClases" />
+  </wsdl:message>
+  <wsdl:message name="consultarClasesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarClasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDepartamentosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarDepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="consultarDepartamentosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarDepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosDisponiblesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarFormulariosDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosDisponiblesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarFormulariosDisponiblesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosExpedirSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarFormulariosExpedir" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosExpedirSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarFormulariosExpedirResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoBDSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarInfoBD" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoBDSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarInfoBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarInfoFormulario" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarInfoFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioExpSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarInfoFormularioExp" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioExpSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarInfoFormularioExpResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoTomadorSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarInfoTomador" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoTomadorSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarInfoTomadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarInfoVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarInfoVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarLineas" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarLineasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasMarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarLineasMarca" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasMarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarLineasMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarMarcasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarMarcas" />
+  </wsdl:message>
+  <wsdl:message name="consultarMarcasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarMarcasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosAnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarMotivosAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosAnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarMotivosAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosReemplazoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarMotivosReemplazo" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosReemplazoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarMotivosReemplazoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarMunicipios" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarMunicipiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosDptoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarMunicipiosDpto" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosDptoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarMunicipiosDptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarOcupacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarOcupaciones" />
+  </wsdl:message>
+  <wsdl:message name="consultarOcupacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarOcupacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarServiciosSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarServicios" />
+  </wsdl:message>
+  <wsdl:message name="consultarServiciosSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarServiciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTarifasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTarifas" />
+  </wsdl:message>
+  <wsdl:message name="consultarTarifasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTarifasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDireccionSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTiposDireccion" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDireccionSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTiposDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTiposDocumento" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTiposDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTiposEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTiposEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposPersonaSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTiposPersona" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposPersonaSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTiposPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposTelefonoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTiposTelefono" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposTelefonoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTiposTelefonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadoFormularioSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarEstadoFormulario" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadoFormularioSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarEstadoFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltEstadoFormularioSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarUltEstadoFormulario" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltEstadoFormularioSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarUltEstadoFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarVigenciaPlacaSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarVigenciaPlaca" />
+  </wsdl:message>
+  <wsdl:message name="consultarVigenciaPlacaSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarVigenciaPlacaResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarPlacaTarifaPaisSoapIn">
+    <wsdl:part name="parameters" element="tns:validarPlacaTarifaPais" />
+  </wsdl:message>
+  <wsdl:message name="validarPlacaTarifaPaisSoapOut">
+    <wsdl:part name="parameters" element="tns:validarPlacaTarifaPaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="generarTasaRuntSoapIn">
+    <wsdl:part name="parameters" element="tns:generarTasaRunt" />
+  </wsdl:message>
+  <wsdl:message name="generarTasaRuntSoapOut">
+    <wsdl:part name="parameters" element="tns:generarTasaRuntResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarCarteraSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarCartera" />
+  </wsdl:message>
+  <wsdl:message name="consultarCarteraSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarCarteraResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPapeleriaIntermediarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitarPapeleriaIntermediario" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPapeleriaIntermediarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitarPapeleriaIntermediarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosVentaPapeleriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPuntosVentaPapeleria" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosVentaPapeleriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPuntosVentaPapeleriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaDisponibleSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarRangosPapeleriaDisponible" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaDisponibleSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarRangosPapeleriaDisponibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaAsignadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarRangosPapeleriaAsignados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaAsignadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarRangosPapeleriaAsignadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConvenioAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarConvenioAP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConvenioAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarConvenioAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarcntAPSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarcntAP" />
+  </wsdl:message>
+  <wsdl:message name="consultarcntAPSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarcntAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFormularioAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarFormularioAP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFormularioAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarFormularioAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTiposPolizaAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarTiposPolizaAP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTiposPolizaAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarTiposPolizaAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoTomadorAPSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInfoTomadorAP" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoTomadorAPSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInfoTomadorAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarExpedicionPolizaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarExpedicionPoliza" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarExpedicionPolizaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarExpedicionPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="expedirPolizaXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:expedirPolizaXML" />
+  </wsdl:message>
+  <wsdl:message name="expedirPolizaXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:expedirPolizaXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcularPolizaSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularPoliza" />
+  </wsdl:message>
+  <wsdl:message name="CalcularPolizaSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcularPolizaCortoPlazoSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularPolizaCortoPlazo" />
+  </wsdl:message>
+  <wsdl:message name="CalcularPolizaCortoPlazoSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularPolizaCortoPlazoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInfoVehiculoRunt" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInfoVehiculoRuntResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntDocSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInfoVehiculoRuntDoc" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntDocSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInfoVehiculoRuntDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewConsultarInfoVehiculoRuntDocSoapIn">
+    <wsdl:part name="parameters" element="tns:NewConsultarInfoVehiculoRuntDoc" />
+  </wsdl:message>
+  <wsdl:message name="NewConsultarInfoVehiculoRuntDocSoapOut">
+    <wsdl:part name="parameters" element="tns:NewConsultarInfoVehiculoRuntDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVehiculoRCESoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaVehiculoRCE" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVehiculoRCESoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaVehiculoRCEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpedirPolizaRcYApSoapIn">
+    <wsdl:part name="parameters" element="tns:ExpedirPolizaRcYAp" />
+  </wsdl:message>
+  <wsdl:message name="ExpedirPolizaRcYApSoapOut">
+    <wsdl:part name="parameters" element="tns:ExpedirPolizaRcYApResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapIn">
+    <wsdl:part name="parameters" element="tns:DescargarArchivoPolElectronica" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapOut">
+    <wsdl:part name="parameters" element="tns:DescargarArchivoPolElectronicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapClientSoapIn">
+    <wsdl:part name="parameters" element="tns:DescargarArchivoPolElectronicaSoapClient" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapClientSoapOut">
+    <wsdl:part name="parameters" element="tns:DescargarArchivoPolElectronicaSoapClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarClasesHttpGetIn" />
+  <wsdl:message name="consultarClasesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarDepartamentosHttpGetIn" />
+  <wsdl:message name="consultarDepartamentosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosDisponiblesHttpGetIn">
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosDisponiblesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosExpedirHttpGetIn">
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosExpedirHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoBDHttpGetIn" />
+  <wsdl:message name="consultarInfoBDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioExpHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioExpHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoTomadorHttpGetIn">
+    <wsdl:part name="nroDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoTomadorHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoVehiculoHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoVehiculoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasHttpGetIn" />
+  <wsdl:message name="consultarLineasHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasMarcaHttpGetIn">
+    <wsdl:part name="codMarcaMinTrans" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasMarcaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMarcasHttpGetIn" />
+  <wsdl:message name="consultarMarcasHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosAnulacionHttpGetIn" />
+  <wsdl:message name="consultarMotivosAnulacionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosReemplazoHttpGetIn" />
+  <wsdl:message name="consultarMotivosReemplazoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosHttpGetIn" />
+  <wsdl:message name="consultarMunicipiosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosDptoHttpGetIn">
+    <wsdl:part name="codDpto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosDptoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarOcupacionesHttpGetIn" />
+  <wsdl:message name="consultarOcupacionesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarServiciosHttpGetIn" />
+  <wsdl:message name="consultarServiciosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTarifasHttpGetIn" />
+  <wsdl:message name="consultarTarifasHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDireccionHttpGetIn" />
+  <wsdl:message name="consultarTiposDireccionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDocumentoHttpGetIn" />
+  <wsdl:message name="consultarTiposDocumentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposEmpresaHttpGetIn" />
+  <wsdl:message name="consultarTiposEmpresaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposPersonaHttpGetIn" />
+  <wsdl:message name="consultarTiposPersonaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposTelefonoHttpGetIn" />
+  <wsdl:message name="consultarTiposTelefonoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadoFormularioHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadoFormularioHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltEstadoFormularioHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltEstadoFormularioHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarVigenciaPlacaHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="motor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarVigenciaPlacaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="validarPlacaTarifaPaisHttpGetIn">
+    <wsdl:part name="pais" type="s:string" />
+    <wsdl:part name="tarifa" type="s:string" />
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="servicio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validarPlacaTarifaPaisHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="generarTasaRuntHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+    <wsdl:part name="codGrupoEndo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="generarTasaRuntHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarCarteraHttpGetIn">
+    <wsdl:part name="codTipoDocumento" type="s:string" />
+    <wsdl:part name="nroDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarCarteraHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPapeleriaIntermediarioHttpGetIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="cntPolizas" type="s:string" />
+    <wsdl:part name="codUsuario" type="s:string" />
+    <wsdl:part name="txtObservaciones" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPapeleriaIntermediarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosVentaPapeleriaHttpGetIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosVentaPapeleriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaDisponibleHttpGetIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaDisponibleHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaAsignadosHttpGetIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaAsignadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConvenioAPHttpGetIn">
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConvenioAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarcntAPHttpGetIn">
+    <wsdl:part name="nroDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarcntAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFormularioAPHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFormularioAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTiposPolizaAPHttpGetIn">
+    <wsdl:part name="vigencia" type="s:string" />
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTiposPolizaAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoTomadorAPHttpGetIn">
+    <wsdl:part name="codTipoDoc" type="s:string" />
+    <wsdl:part name="nroDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoTomadorAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarExpedicionPolizaHttpGetIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+    <wsdl:part name="codGrupoEndo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarExpedicionPolizaHttpGetOut">
+    <wsdl:part name="Body" element="tns:EstadoExpedicionPoliza" />
+  </wsdl:message>
+  <wsdl:message name="expedirPolizaXMLHttpGetIn">
+    <wsdl:part name="xmlFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="expedirPolizaXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntHttpGetOut">
+    <wsdl:part name="Body" element="tns:InformacionVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntDocHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:InformacionVehiculoDoc" />
+  </wsdl:message>
+  <wsdl:message name="NewConsultarInfoVehiculoRuntDocHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+    <wsdl:part name="cod_agente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewConsultarInfoVehiculoRuntDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:ConsultaInfoRuntWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVehiculoRCEHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVehiculoRCEHttpGetOut">
+    <wsdl:part name="Body" element="tns:InfoBasicaRce" />
+  </wsdl:message>
+  <wsdl:message name="ExpedirPolizaRcYApHttpGetIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExpedirPolizaRcYApHttpGetOut">
+    <wsdl:part name="Body" element="tns:EstadoProceso" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaHttpGetIn">
+    <wsdl:part name="txt_patente" type="s:string" />
+    <wsdl:part name="nro_doc" type="s:string" />
+    <wsdl:part name="cod_agente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaHttpGetOut" />
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapClientHttpGetIn">
+    <wsdl:part name="txt_patente" type="s:string" />
+    <wsdl:part name="nro_doc" type="s:string" />
+    <wsdl:part name="cod_agente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapClientHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="consultarClasesHttpPostIn" />
+  <wsdl:message name="consultarClasesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarDepartamentosHttpPostIn" />
+  <wsdl:message name="consultarDepartamentosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosDisponiblesHttpPostIn">
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosDisponiblesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosExpedirHttpPostIn">
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarFormulariosExpedirHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoBDHttpPostIn" />
+  <wsdl:message name="consultarInfoBDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioExpHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoFormularioExpHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoTomadorHttpPostIn">
+    <wsdl:part name="nroDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoTomadorHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoVehiculoHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarInfoVehiculoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasHttpPostIn" />
+  <wsdl:message name="consultarLineasHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasMarcaHttpPostIn">
+    <wsdl:part name="codMarcaMinTrans" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarLineasMarcaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMarcasHttpPostIn" />
+  <wsdl:message name="consultarMarcasHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosAnulacionHttpPostIn" />
+  <wsdl:message name="consultarMotivosAnulacionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMotivosReemplazoHttpPostIn" />
+  <wsdl:message name="consultarMotivosReemplazoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosHttpPostIn" />
+  <wsdl:message name="consultarMunicipiosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosDptoHttpPostIn">
+    <wsdl:part name="codDpto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarMunicipiosDptoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarOcupacionesHttpPostIn" />
+  <wsdl:message name="consultarOcupacionesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarServiciosHttpPostIn" />
+  <wsdl:message name="consultarServiciosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTarifasHttpPostIn" />
+  <wsdl:message name="consultarTarifasHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDireccionHttpPostIn" />
+  <wsdl:message name="consultarTiposDireccionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDocumentoHttpPostIn" />
+  <wsdl:message name="consultarTiposDocumentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposEmpresaHttpPostIn" />
+  <wsdl:message name="consultarTiposEmpresaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposPersonaHttpPostIn" />
+  <wsdl:message name="consultarTiposPersonaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarTiposTelefonoHttpPostIn" />
+  <wsdl:message name="consultarTiposTelefonoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadoFormularioHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarEstadoFormularioHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltEstadoFormularioHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarUltEstadoFormularioHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarVigenciaPlacaHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="motor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarVigenciaPlacaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="validarPlacaTarifaPaisHttpPostIn">
+    <wsdl:part name="pais" type="s:string" />
+    <wsdl:part name="tarifa" type="s:string" />
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="servicio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validarPlacaTarifaPaisHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="generarTasaRuntHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+    <wsdl:part name="codGrupoEndo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="generarTasaRuntHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarCarteraHttpPostIn">
+    <wsdl:part name="codTipoDocumento" type="s:string" />
+    <wsdl:part name="nroDocumento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarCarteraHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPapeleriaIntermediarioHttpPostIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="cntPolizas" type="s:string" />
+    <wsdl:part name="codUsuario" type="s:string" />
+    <wsdl:part name="txtObservaciones" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarPapeleriaIntermediarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosVentaPapeleriaHttpPostIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosVentaPapeleriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaDisponibleHttpPostIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaDisponibleHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaAsignadosHttpPostIn">
+    <wsdl:part name="codSucursal" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRangosPapeleriaAsignadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConvenioAPHttpPostIn">
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConvenioAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="consultarcntAPHttpPostIn">
+    <wsdl:part name="nroDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="consultarcntAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFormularioAPHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFormularioAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTiposPolizaAPHttpPostIn">
+    <wsdl:part name="vigencia" type="s:string" />
+    <wsdl:part name="codSuc" type="s:string" />
+    <wsdl:part name="codAgente" type="s:string" />
+    <wsdl:part name="codPtoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTiposPolizaAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoTomadorAPHttpPostIn">
+    <wsdl:part name="codTipoDoc" type="s:string" />
+    <wsdl:part name="nroDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoTomadorAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarExpedicionPolizaHttpPostIn">
+    <wsdl:part name="nroFormulario" type="s:string" />
+    <wsdl:part name="codGrupoEndo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarExpedicionPolizaHttpPostOut">
+    <wsdl:part name="Body" element="tns:EstadoExpedicionPoliza" />
+  </wsdl:message>
+  <wsdl:message name="expedirPolizaXMLHttpPostIn">
+    <wsdl:part name="xmlFile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="expedirPolizaXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntHttpPostOut">
+    <wsdl:part name="Body" element="tns:InformacionVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntDocHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInfoVehiculoRuntDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:InformacionVehiculoDoc" />
+  </wsdl:message>
+  <wsdl:message name="NewConsultarInfoVehiculoRuntDocHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+    <wsdl:part name="cod_agente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewConsultarInfoVehiculoRuntDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:ConsultaInfoRuntWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVehiculoRCEHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="puntoVta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVehiculoRCEHttpPostOut">
+    <wsdl:part name="Body" element="tns:InfoBasicaRce" />
+  </wsdl:message>
+  <wsdl:message name="ExpedirPolizaRcYApHttpPostIn">
+    <wsdl:part name="jsonData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExpedirPolizaRcYApHttpPostOut">
+    <wsdl:part name="Body" element="tns:EstadoProceso" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaHttpPostIn">
+    <wsdl:part name="txt_patente" type="s:string" />
+    <wsdl:part name="nro_doc" type="s:string" />
+    <wsdl:part name="cod_agente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaHttpPostOut" />
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapClientHttpPostIn">
+    <wsdl:part name="txt_patente" type="s:string" />
+    <wsdl:part name="nro_doc" type="s:string" />
+    <wsdl:part name="cod_agente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DescargarArchivoPolElectronicaSoapClientHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:portType name="SOATMundialSoap">
+    <wsdl:operation name="consultarClases">
+      <wsdl:input message="tns:consultarClasesSoapIn" />
+      <wsdl:output message="tns:consultarClasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <wsdl:input message="tns:consultarDepartamentosSoapIn" />
+      <wsdl:output message="tns:consultarDepartamentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <wsdl:input message="tns:consultarFormulariosDisponiblesSoapIn" />
+      <wsdl:output message="tns:consultarFormulariosDisponiblesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <wsdl:input message="tns:consultarFormulariosExpedirSoapIn" />
+      <wsdl:output message="tns:consultarFormulariosExpedirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <wsdl:input message="tns:consultarInfoBDSoapIn" />
+      <wsdl:output message="tns:consultarInfoBDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <wsdl:input message="tns:consultarInfoFormularioSoapIn" />
+      <wsdl:output message="tns:consultarInfoFormularioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <wsdl:input message="tns:consultarInfoFormularioExpSoapIn" />
+      <wsdl:output message="tns:consultarInfoFormularioExpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <wsdl:input message="tns:consultarInfoTomadorSoapIn" />
+      <wsdl:output message="tns:consultarInfoTomadorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <wsdl:input message="tns:consultarInfoVehiculoSoapIn" />
+      <wsdl:output message="tns:consultarInfoVehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <wsdl:input message="tns:consultarLineasSoapIn" />
+      <wsdl:output message="tns:consultarLineasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <wsdl:input message="tns:consultarLineasMarcaSoapIn" />
+      <wsdl:output message="tns:consultarLineasMarcaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <wsdl:input message="tns:consultarMarcasSoapIn" />
+      <wsdl:output message="tns:consultarMarcasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <wsdl:input message="tns:consultarMotivosAnulacionSoapIn" />
+      <wsdl:output message="tns:consultarMotivosAnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <wsdl:input message="tns:consultarMotivosReemplazoSoapIn" />
+      <wsdl:output message="tns:consultarMotivosReemplazoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <wsdl:input message="tns:consultarMunicipiosSoapIn" />
+      <wsdl:output message="tns:consultarMunicipiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <wsdl:input message="tns:consultarMunicipiosDptoSoapIn" />
+      <wsdl:output message="tns:consultarMunicipiosDptoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <wsdl:input message="tns:consultarOcupacionesSoapIn" />
+      <wsdl:output message="tns:consultarOcupacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <wsdl:input message="tns:consultarServiciosSoapIn" />
+      <wsdl:output message="tns:consultarServiciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <wsdl:input message="tns:consultarTarifasSoapIn" />
+      <wsdl:output message="tns:consultarTarifasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <wsdl:input message="tns:consultarTiposDireccionSoapIn" />
+      <wsdl:output message="tns:consultarTiposDireccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <wsdl:input message="tns:consultarTiposDocumentoSoapIn" />
+      <wsdl:output message="tns:consultarTiposDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <wsdl:input message="tns:consultarTiposEmpresaSoapIn" />
+      <wsdl:output message="tns:consultarTiposEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <wsdl:input message="tns:consultarTiposPersonaSoapIn" />
+      <wsdl:output message="tns:consultarTiposPersonaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <wsdl:input message="tns:consultarTiposTelefonoSoapIn" />
+      <wsdl:output message="tns:consultarTiposTelefonoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <wsdl:input message="tns:consultarEstadoFormularioSoapIn" />
+      <wsdl:output message="tns:consultarEstadoFormularioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <wsdl:input message="tns:consultarUltEstadoFormularioSoapIn" />
+      <wsdl:output message="tns:consultarUltEstadoFormularioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <wsdl:input message="tns:consultarVigenciaPlacaSoapIn" />
+      <wsdl:output message="tns:consultarVigenciaPlacaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <wsdl:input message="tns:validarPlacaTarifaPaisSoapIn" />
+      <wsdl:output message="tns:validarPlacaTarifaPaisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <wsdl:input message="tns:generarTasaRuntSoapIn" />
+      <wsdl:output message="tns:generarTasaRuntSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <wsdl:input message="tns:consultarCarteraSoapIn" />
+      <wsdl:output message="tns:consultarCarteraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <wsdl:input message="tns:SolicitarPapeleriaIntermediarioSoapIn" />
+      <wsdl:output message="tns:SolicitarPapeleriaIntermediarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <wsdl:input message="tns:ConsultarPuntosVentaPapeleriaSoapIn" />
+      <wsdl:output message="tns:ConsultarPuntosVentaPapeleriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <wsdl:input message="tns:ConsultarRangosPapeleriaDisponibleSoapIn" />
+      <wsdl:output message="tns:ConsultarRangosPapeleriaDisponibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <wsdl:input message="tns:ConsultarRangosPapeleriaAsignadosSoapIn" />
+      <wsdl:output message="tns:ConsultarRangosPapeleriaAsignadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <wsdl:input message="tns:ConsultarConvenioAPSoapIn" />
+      <wsdl:output message="tns:ConsultarConvenioAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <wsdl:input message="tns:consultarcntAPSoapIn" />
+      <wsdl:output message="tns:consultarcntAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <wsdl:input message="tns:ConsultarFormularioAPSoapIn" />
+      <wsdl:output message="tns:ConsultarFormularioAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <wsdl:input message="tns:ConsultarTiposPolizaAPSoapIn" />
+      <wsdl:output message="tns:ConsultarTiposPolizaAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <wsdl:input message="tns:ConsultarInfoTomadorAPSoapIn" />
+      <wsdl:output message="tns:ConsultarInfoTomadorAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que permite confirmar la expedicion de la poliza</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmarExpedicionPolizaSoapIn" />
+      <wsdl:output message="tns:ConfirmarExpedicionPolizaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <wsdl:input message="tns:expedirPolizaXMLSoapIn" />
+      <wsdl:output message="tns:expedirPolizaXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPoliza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que permite realizar el cálculo de una póliza</wsdl:documentation>
+      <wsdl:input message="tns:CalcularPolizaSoapIn" />
+      <wsdl:output message="tns:CalcularPolizaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPolizaCortoPlazo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que permite realizar el cálculo de una póliza a corto plazo.</wsdl:documentation>
+      <wsdl:input message="tns:CalcularPolizaCortoPlazoSoapIn" />
+      <wsdl:output message="tns:CalcularPolizaCortoPlazoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInfoVehiculoRuntSoapIn" />
+      <wsdl:output message="tns:ConsultarInfoVehiculoRuntSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt con doc</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInfoVehiculoRuntDocSoapIn" />
+      <wsdl:output message="tns:ConsultarInfoVehiculoRuntDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt</wsdl:documentation>
+      <wsdl:input message="tns:NewConsultarInfoVehiculoRuntDocSoapIn" />
+      <wsdl:output message="tns:NewConsultarInfoVehiculoRuntDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta de Vehiculos y Tarifas</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaVehiculoRCESoapIn" />
+      <wsdl:output message="tns:ConsultaVehiculoRCESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <wsdl:input message="tns:ExpedirPolizaRcYApSoapIn" />
+      <wsdl:output message="tns:ExpedirPolizaRcYApSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para descargar archivo</wsdl:documentation>
+      <wsdl:input message="tns:DescargarArchivoPolElectronicaSoapIn" />
+      <wsdl:output message="tns:DescargarArchivoPolElectronicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para descargar archivo</wsdl:documentation>
+      <wsdl:input message="tns:DescargarArchivoPolElectronicaSoapClientSoapIn" />
+      <wsdl:output message="tns:DescargarArchivoPolElectronicaSoapClientSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SOATMundialHttpGet">
+    <wsdl:operation name="consultarClases">
+      <wsdl:input message="tns:consultarClasesHttpGetIn" />
+      <wsdl:output message="tns:consultarClasesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <wsdl:input message="tns:consultarDepartamentosHttpGetIn" />
+      <wsdl:output message="tns:consultarDepartamentosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <wsdl:input message="tns:consultarFormulariosDisponiblesHttpGetIn" />
+      <wsdl:output message="tns:consultarFormulariosDisponiblesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <wsdl:input message="tns:consultarFormulariosExpedirHttpGetIn" />
+      <wsdl:output message="tns:consultarFormulariosExpedirHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <wsdl:input message="tns:consultarInfoBDHttpGetIn" />
+      <wsdl:output message="tns:consultarInfoBDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <wsdl:input message="tns:consultarInfoFormularioHttpGetIn" />
+      <wsdl:output message="tns:consultarInfoFormularioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <wsdl:input message="tns:consultarInfoFormularioExpHttpGetIn" />
+      <wsdl:output message="tns:consultarInfoFormularioExpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <wsdl:input message="tns:consultarInfoTomadorHttpGetIn" />
+      <wsdl:output message="tns:consultarInfoTomadorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <wsdl:input message="tns:consultarInfoVehiculoHttpGetIn" />
+      <wsdl:output message="tns:consultarInfoVehiculoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <wsdl:input message="tns:consultarLineasHttpGetIn" />
+      <wsdl:output message="tns:consultarLineasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <wsdl:input message="tns:consultarLineasMarcaHttpGetIn" />
+      <wsdl:output message="tns:consultarLineasMarcaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <wsdl:input message="tns:consultarMarcasHttpGetIn" />
+      <wsdl:output message="tns:consultarMarcasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <wsdl:input message="tns:consultarMotivosAnulacionHttpGetIn" />
+      <wsdl:output message="tns:consultarMotivosAnulacionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <wsdl:input message="tns:consultarMotivosReemplazoHttpGetIn" />
+      <wsdl:output message="tns:consultarMotivosReemplazoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <wsdl:input message="tns:consultarMunicipiosHttpGetIn" />
+      <wsdl:output message="tns:consultarMunicipiosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <wsdl:input message="tns:consultarMunicipiosDptoHttpGetIn" />
+      <wsdl:output message="tns:consultarMunicipiosDptoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <wsdl:input message="tns:consultarOcupacionesHttpGetIn" />
+      <wsdl:output message="tns:consultarOcupacionesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <wsdl:input message="tns:consultarServiciosHttpGetIn" />
+      <wsdl:output message="tns:consultarServiciosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <wsdl:input message="tns:consultarTarifasHttpGetIn" />
+      <wsdl:output message="tns:consultarTarifasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <wsdl:input message="tns:consultarTiposDireccionHttpGetIn" />
+      <wsdl:output message="tns:consultarTiposDireccionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <wsdl:input message="tns:consultarTiposDocumentoHttpGetIn" />
+      <wsdl:output message="tns:consultarTiposDocumentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <wsdl:input message="tns:consultarTiposEmpresaHttpGetIn" />
+      <wsdl:output message="tns:consultarTiposEmpresaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <wsdl:input message="tns:consultarTiposPersonaHttpGetIn" />
+      <wsdl:output message="tns:consultarTiposPersonaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <wsdl:input message="tns:consultarTiposTelefonoHttpGetIn" />
+      <wsdl:output message="tns:consultarTiposTelefonoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <wsdl:input message="tns:consultarEstadoFormularioHttpGetIn" />
+      <wsdl:output message="tns:consultarEstadoFormularioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <wsdl:input message="tns:consultarUltEstadoFormularioHttpGetIn" />
+      <wsdl:output message="tns:consultarUltEstadoFormularioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <wsdl:input message="tns:consultarVigenciaPlacaHttpGetIn" />
+      <wsdl:output message="tns:consultarVigenciaPlacaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <wsdl:input message="tns:validarPlacaTarifaPaisHttpGetIn" />
+      <wsdl:output message="tns:validarPlacaTarifaPaisHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <wsdl:input message="tns:generarTasaRuntHttpGetIn" />
+      <wsdl:output message="tns:generarTasaRuntHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <wsdl:input message="tns:consultarCarteraHttpGetIn" />
+      <wsdl:output message="tns:consultarCarteraHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <wsdl:input message="tns:SolicitarPapeleriaIntermediarioHttpGetIn" />
+      <wsdl:output message="tns:SolicitarPapeleriaIntermediarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <wsdl:input message="tns:ConsultarPuntosVentaPapeleriaHttpGetIn" />
+      <wsdl:output message="tns:ConsultarPuntosVentaPapeleriaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <wsdl:input message="tns:ConsultarRangosPapeleriaDisponibleHttpGetIn" />
+      <wsdl:output message="tns:ConsultarRangosPapeleriaDisponibleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <wsdl:input message="tns:ConsultarRangosPapeleriaAsignadosHttpGetIn" />
+      <wsdl:output message="tns:ConsultarRangosPapeleriaAsignadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <wsdl:input message="tns:ConsultarConvenioAPHttpGetIn" />
+      <wsdl:output message="tns:ConsultarConvenioAPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <wsdl:input message="tns:consultarcntAPHttpGetIn" />
+      <wsdl:output message="tns:consultarcntAPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <wsdl:input message="tns:ConsultarFormularioAPHttpGetIn" />
+      <wsdl:output message="tns:ConsultarFormularioAPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <wsdl:input message="tns:ConsultarTiposPolizaAPHttpGetIn" />
+      <wsdl:output message="tns:ConsultarTiposPolizaAPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <wsdl:input message="tns:ConsultarInfoTomadorAPHttpGetIn" />
+      <wsdl:output message="tns:ConsultarInfoTomadorAPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que permite confirmar la expedicion de la poliza</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmarExpedicionPolizaHttpGetIn" />
+      <wsdl:output message="tns:ConfirmarExpedicionPolizaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <wsdl:input message="tns:expedirPolizaXMLHttpGetIn" />
+      <wsdl:output message="tns:expedirPolizaXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInfoVehiculoRuntHttpGetIn" />
+      <wsdl:output message="tns:ConsultarInfoVehiculoRuntHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt con doc</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInfoVehiculoRuntDocHttpGetIn" />
+      <wsdl:output message="tns:ConsultarInfoVehiculoRuntDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt</wsdl:documentation>
+      <wsdl:input message="tns:NewConsultarInfoVehiculoRuntDocHttpGetIn" />
+      <wsdl:output message="tns:NewConsultarInfoVehiculoRuntDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta de Vehiculos y Tarifas</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaVehiculoRCEHttpGetIn" />
+      <wsdl:output message="tns:ConsultaVehiculoRCEHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <wsdl:input message="tns:ExpedirPolizaRcYApHttpGetIn" />
+      <wsdl:output message="tns:ExpedirPolizaRcYApHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para descargar archivo</wsdl:documentation>
+      <wsdl:input message="tns:DescargarArchivoPolElectronicaHttpGetIn" />
+      <wsdl:output message="tns:DescargarArchivoPolElectronicaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para descargar archivo</wsdl:documentation>
+      <wsdl:input message="tns:DescargarArchivoPolElectronicaSoapClientHttpGetIn" />
+      <wsdl:output message="tns:DescargarArchivoPolElectronicaSoapClientHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SOATMundialHttpPost">
+    <wsdl:operation name="consultarClases">
+      <wsdl:input message="tns:consultarClasesHttpPostIn" />
+      <wsdl:output message="tns:consultarClasesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <wsdl:input message="tns:consultarDepartamentosHttpPostIn" />
+      <wsdl:output message="tns:consultarDepartamentosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <wsdl:input message="tns:consultarFormulariosDisponiblesHttpPostIn" />
+      <wsdl:output message="tns:consultarFormulariosDisponiblesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <wsdl:input message="tns:consultarFormulariosExpedirHttpPostIn" />
+      <wsdl:output message="tns:consultarFormulariosExpedirHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <wsdl:input message="tns:consultarInfoBDHttpPostIn" />
+      <wsdl:output message="tns:consultarInfoBDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <wsdl:input message="tns:consultarInfoFormularioHttpPostIn" />
+      <wsdl:output message="tns:consultarInfoFormularioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <wsdl:input message="tns:consultarInfoFormularioExpHttpPostIn" />
+      <wsdl:output message="tns:consultarInfoFormularioExpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <wsdl:input message="tns:consultarInfoTomadorHttpPostIn" />
+      <wsdl:output message="tns:consultarInfoTomadorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <wsdl:input message="tns:consultarInfoVehiculoHttpPostIn" />
+      <wsdl:output message="tns:consultarInfoVehiculoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <wsdl:input message="tns:consultarLineasHttpPostIn" />
+      <wsdl:output message="tns:consultarLineasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <wsdl:input message="tns:consultarLineasMarcaHttpPostIn" />
+      <wsdl:output message="tns:consultarLineasMarcaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <wsdl:input message="tns:consultarMarcasHttpPostIn" />
+      <wsdl:output message="tns:consultarMarcasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <wsdl:input message="tns:consultarMotivosAnulacionHttpPostIn" />
+      <wsdl:output message="tns:consultarMotivosAnulacionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <wsdl:input message="tns:consultarMotivosReemplazoHttpPostIn" />
+      <wsdl:output message="tns:consultarMotivosReemplazoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <wsdl:input message="tns:consultarMunicipiosHttpPostIn" />
+      <wsdl:output message="tns:consultarMunicipiosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <wsdl:input message="tns:consultarMunicipiosDptoHttpPostIn" />
+      <wsdl:output message="tns:consultarMunicipiosDptoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <wsdl:input message="tns:consultarOcupacionesHttpPostIn" />
+      <wsdl:output message="tns:consultarOcupacionesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <wsdl:input message="tns:consultarServiciosHttpPostIn" />
+      <wsdl:output message="tns:consultarServiciosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <wsdl:input message="tns:consultarTarifasHttpPostIn" />
+      <wsdl:output message="tns:consultarTarifasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <wsdl:input message="tns:consultarTiposDireccionHttpPostIn" />
+      <wsdl:output message="tns:consultarTiposDireccionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <wsdl:input message="tns:consultarTiposDocumentoHttpPostIn" />
+      <wsdl:output message="tns:consultarTiposDocumentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <wsdl:input message="tns:consultarTiposEmpresaHttpPostIn" />
+      <wsdl:output message="tns:consultarTiposEmpresaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <wsdl:input message="tns:consultarTiposPersonaHttpPostIn" />
+      <wsdl:output message="tns:consultarTiposPersonaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <wsdl:input message="tns:consultarTiposTelefonoHttpPostIn" />
+      <wsdl:output message="tns:consultarTiposTelefonoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <wsdl:input message="tns:consultarEstadoFormularioHttpPostIn" />
+      <wsdl:output message="tns:consultarEstadoFormularioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <wsdl:input message="tns:consultarUltEstadoFormularioHttpPostIn" />
+      <wsdl:output message="tns:consultarUltEstadoFormularioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <wsdl:input message="tns:consultarVigenciaPlacaHttpPostIn" />
+      <wsdl:output message="tns:consultarVigenciaPlacaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <wsdl:input message="tns:validarPlacaTarifaPaisHttpPostIn" />
+      <wsdl:output message="tns:validarPlacaTarifaPaisHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <wsdl:input message="tns:generarTasaRuntHttpPostIn" />
+      <wsdl:output message="tns:generarTasaRuntHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <wsdl:input message="tns:consultarCarteraHttpPostIn" />
+      <wsdl:output message="tns:consultarCarteraHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <wsdl:input message="tns:SolicitarPapeleriaIntermediarioHttpPostIn" />
+      <wsdl:output message="tns:SolicitarPapeleriaIntermediarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <wsdl:input message="tns:ConsultarPuntosVentaPapeleriaHttpPostIn" />
+      <wsdl:output message="tns:ConsultarPuntosVentaPapeleriaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <wsdl:input message="tns:ConsultarRangosPapeleriaDisponibleHttpPostIn" />
+      <wsdl:output message="tns:ConsultarRangosPapeleriaDisponibleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <wsdl:input message="tns:ConsultarRangosPapeleriaAsignadosHttpPostIn" />
+      <wsdl:output message="tns:ConsultarRangosPapeleriaAsignadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <wsdl:input message="tns:ConsultarConvenioAPHttpPostIn" />
+      <wsdl:output message="tns:ConsultarConvenioAPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <wsdl:input message="tns:consultarcntAPHttpPostIn" />
+      <wsdl:output message="tns:consultarcntAPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <wsdl:input message="tns:ConsultarFormularioAPHttpPostIn" />
+      <wsdl:output message="tns:ConsultarFormularioAPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <wsdl:input message="tns:ConsultarTiposPolizaAPHttpPostIn" />
+      <wsdl:output message="tns:ConsultarTiposPolizaAPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <wsdl:input message="tns:ConsultarInfoTomadorAPHttpPostIn" />
+      <wsdl:output message="tns:ConsultarInfoTomadorAPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que permite confirmar la expedicion de la poliza</wsdl:documentation>
+      <wsdl:input message="tns:ConfirmarExpedicionPolizaHttpPostIn" />
+      <wsdl:output message="tns:ConfirmarExpedicionPolizaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <wsdl:input message="tns:expedirPolizaXMLHttpPostIn" />
+      <wsdl:output message="tns:expedirPolizaXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInfoVehiculoRuntHttpPostIn" />
+      <wsdl:output message="tns:ConsultarInfoVehiculoRuntHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt con doc</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarInfoVehiculoRuntDocHttpPostIn" />
+      <wsdl:output message="tns:ConsultarInfoVehiculoRuntDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para la consulta runt</wsdl:documentation>
+      <wsdl:input message="tns:NewConsultarInfoVehiculoRuntDocHttpPostIn" />
+      <wsdl:output message="tns:NewConsultarInfoVehiculoRuntDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta de Vehiculos y Tarifas</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaVehiculoRCEHttpPostIn" />
+      <wsdl:output message="tns:ConsultaVehiculoRCEHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <wsdl:input message="tns:ExpedirPolizaRcYApHttpPostIn" />
+      <wsdl:output message="tns:ExpedirPolizaRcYApHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para descargar archivo</wsdl:documentation>
+      <wsdl:input message="tns:DescargarArchivoPolElectronicaHttpPostIn" />
+      <wsdl:output message="tns:DescargarArchivoPolElectronicaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para descargar archivo</wsdl:documentation>
+      <wsdl:input message="tns:DescargarArchivoPolElectronicaSoapClientHttpPostIn" />
+      <wsdl:output message="tns:DescargarArchivoPolElectronicaSoapClientHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOATMundialSoap" type="tns:SOATMundialSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarClases">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarClases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarFormulariosDisponibles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarFormulariosExpedir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarInfoBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarInfoFormulario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarInfoFormularioExp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarInfoTomador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarInfoVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarLineas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarLineasMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarMarcas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarMotivosAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarMotivosReemplazo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarMunicipios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarMunicipiosDpto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarOcupaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarServicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarTarifas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarTiposDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarTiposDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarTiposEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarTiposPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarTiposTelefono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarEstadoFormulario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarUltEstadoFormulario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarVigenciaPlaca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/validarPlacaTarifaPais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/generarTasaRunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarCartera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/SolicitarPapeleriaIntermediario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarPuntosVentaPapeleria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarRangosPapeleriaDisponible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarRangosPapeleriaAsignados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarConvenioAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/consultarcntAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarFormularioAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarTiposPolizaAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarInfoTomadorAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConfirmarExpedicionPoliza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/expedirPolizaXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPoliza">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/CalcularPoliza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPolizaCortoPlazo">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/CalcularPolizaCortoPlazo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarInfoVehiculoRunt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultarInfoVehiculoRuntDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/NewConsultarInfoVehiculoRuntDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ConsultaVehiculoRCE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/ExpedirPolizaRcYAp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/DescargarArchivoPolElectronica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <soap:operation soapAction="http://www.mundialseguros.com.co/DescargarArchivoPolElectronicaSoapClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SOATMundialSoap12" type="tns:SOATMundialSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarClases">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarClases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarDepartamentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarFormulariosDisponibles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarFormulariosExpedir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarInfoBD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarInfoFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarInfoFormularioExp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarInfoTomador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarInfoVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarLineas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarLineasMarca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarMarcas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarMotivosAnulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarMotivosReemplazo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarMunicipios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarMunicipiosDpto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarOcupaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarServicios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarTarifas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarTiposDireccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarTiposDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarTiposEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarTiposPersona" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarTiposTelefono" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarEstadoFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarUltEstadoFormulario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarVigenciaPlaca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/validarPlacaTarifaPais" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/generarTasaRunt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarCartera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/SolicitarPapeleriaIntermediario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarPuntosVentaPapeleria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarRangosPapeleriaDisponible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarRangosPapeleriaAsignados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarConvenioAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/consultarcntAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarFormularioAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarTiposPolizaAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarInfoTomadorAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConfirmarExpedicionPoliza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/expedirPolizaXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPoliza">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/CalcularPoliza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularPolizaCortoPlazo">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/CalcularPolizaCortoPlazo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarInfoVehiculoRunt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultarInfoVehiculoRuntDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/NewConsultarInfoVehiculoRuntDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ConsultaVehiculoRCE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/ExpedirPolizaRcYAp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/DescargarArchivoPolElectronica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <soap12:operation soapAction="http://www.mundialseguros.com.co/DescargarArchivoPolElectronicaSoapClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SOATMundialHttpGet" type="tns:SOATMundialHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="consultarClases">
+      <http:operation location="/consultarClases" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <http:operation location="/consultarDepartamentos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <http:operation location="/consultarFormulariosDisponibles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <http:operation location="/consultarFormulariosExpedir" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <http:operation location="/consultarInfoBD" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <http:operation location="/consultarInfoFormulario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <http:operation location="/consultarInfoFormularioExp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <http:operation location="/consultarInfoTomador" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <http:operation location="/consultarInfoVehiculo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <http:operation location="/consultarLineas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <http:operation location="/consultarLineasMarca" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <http:operation location="/consultarMarcas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <http:operation location="/consultarMotivosAnulacion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <http:operation location="/consultarMotivosReemplazo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <http:operation location="/consultarMunicipios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <http:operation location="/consultarMunicipiosDpto" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <http:operation location="/consultarOcupaciones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <http:operation location="/consultarServicios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <http:operation location="/consultarTarifas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <http:operation location="/consultarTiposDireccion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <http:operation location="/consultarTiposDocumento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <http:operation location="/consultarTiposEmpresa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <http:operation location="/consultarTiposPersona" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <http:operation location="/consultarTiposTelefono" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <http:operation location="/consultarEstadoFormulario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <http:operation location="/consultarUltEstadoFormulario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <http:operation location="/consultarVigenciaPlaca" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <http:operation location="/validarPlacaTarifaPais" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <http:operation location="/generarTasaRunt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <http:operation location="/consultarCartera" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <http:operation location="/SolicitarPapeleriaIntermediario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <http:operation location="/ConsultarPuntosVentaPapeleria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <http:operation location="/ConsultarRangosPapeleriaDisponible" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <http:operation location="/ConsultarRangosPapeleriaAsignados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <http:operation location="/ConsultarConvenioAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <http:operation location="/consultarcntAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <http:operation location="/ConsultarFormularioAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <http:operation location="/ConsultarTiposPolizaAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <http:operation location="/ConsultarInfoTomadorAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <http:operation location="/ConfirmarExpedicionPoliza" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <http:operation location="/expedirPolizaXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <http:operation location="/ConsultarInfoVehiculoRunt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <http:operation location="/ConsultarInfoVehiculoRuntDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <http:operation location="/NewConsultarInfoVehiculoRuntDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <http:operation location="/ConsultaVehiculoRCE" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <http:operation location="/ExpedirPolizaRcYAp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <http:operation location="/DescargarArchivoPolElectronica" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <http:operation location="/DescargarArchivoPolElectronicaSoapClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SOATMundialHttpPost" type="tns:SOATMundialHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="consultarClases">
+      <http:operation location="/consultarClases" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDepartamentos">
+      <http:operation location="/consultarDepartamentos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosDisponibles">
+      <http:operation location="/consultarFormulariosDisponibles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFormulariosExpedir">
+      <http:operation location="/consultarFormulariosExpedir" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoBD">
+      <http:operation location="/consultarInfoBD" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormulario">
+      <http:operation location="/consultarInfoFormulario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoFormularioExp">
+      <http:operation location="/consultarInfoFormularioExp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoTomador">
+      <http:operation location="/consultarInfoTomador" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInfoVehiculo">
+      <http:operation location="/consultarInfoVehiculo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineas">
+      <http:operation location="/consultarLineas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLineasMarca">
+      <http:operation location="/consultarLineasMarca" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMarcas">
+      <http:operation location="/consultarMarcas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosAnulacion">
+      <http:operation location="/consultarMotivosAnulacion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMotivosReemplazo">
+      <http:operation location="/consultarMotivosReemplazo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipios">
+      <http:operation location="/consultarMunicipios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarMunicipiosDpto">
+      <http:operation location="/consultarMunicipiosDpto" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOcupaciones">
+      <http:operation location="/consultarOcupaciones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicios">
+      <http:operation location="/consultarServicios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTarifas">
+      <http:operation location="/consultarTarifas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDireccion">
+      <http:operation location="/consultarTiposDireccion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumento">
+      <http:operation location="/consultarTiposDocumento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposEmpresa">
+      <http:operation location="/consultarTiposEmpresa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposPersona">
+      <http:operation location="/consultarTiposPersona" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposTelefono">
+      <http:operation location="/consultarTiposTelefono" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstadoFormulario">
+      <http:operation location="/consultarEstadoFormulario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltEstadoFormulario">
+      <http:operation location="/consultarUltEstadoFormulario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarVigenciaPlaca">
+      <http:operation location="/consultarVigenciaPlaca" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarPlacaTarifaPais">
+      <http:operation location="/validarPlacaTarifaPais" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generarTasaRunt">
+      <http:operation location="/generarTasaRunt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCartera">
+      <http:operation location="/consultarCartera" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarPapeleriaIntermediario">
+      <http:operation location="/SolicitarPapeleriaIntermediario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntosVentaPapeleria">
+      <http:operation location="/ConsultarPuntosVentaPapeleria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaDisponible">
+      <http:operation location="/ConsultarRangosPapeleriaDisponible" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRangosPapeleriaAsignados">
+      <http:operation location="/ConsultarRangosPapeleriaAsignados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConvenioAP">
+      <http:operation location="/ConsultarConvenioAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarcntAP">
+      <http:operation location="/consultarcntAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFormularioAP">
+      <http:operation location="/ConsultarFormularioAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTiposPolizaAP">
+      <http:operation location="/ConsultarTiposPolizaAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoTomadorAP">
+      <http:operation location="/ConsultarInfoTomadorAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarExpedicionPoliza">
+      <http:operation location="/ConfirmarExpedicionPoliza" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expedirPolizaXML">
+      <http:operation location="/expedirPolizaXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRunt">
+      <http:operation location="/ConsultarInfoVehiculoRunt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInfoVehiculoRuntDoc">
+      <http:operation location="/ConsultarInfoVehiculoRuntDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewConsultarInfoVehiculoRuntDoc">
+      <http:operation location="/NewConsultarInfoVehiculoRuntDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVehiculoRCE">
+      <http:operation location="/ConsultaVehiculoRCE" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedirPolizaRcYAp">
+      <http:operation location="/ExpedirPolizaRcYAp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronica">
+      <http:operation location="/DescargarArchivoPolElectronica" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarArchivoPolElectronicaSoapClient">
+      <http:operation location="/DescargarArchivoPolElectronicaSoapClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SOATMundial">
+    <wsdl:port name="SOATMundialSoap" binding="tns:SOATMundialSoap">
+      <soap:address location="http://vmlmasivos.mundialseguros.com.co/SOATMundial.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SOATMundialSoap12" binding="tns:SOATMundialSoap12">
+      <soap12:address location="http://vmlmasivos.mundialseguros.com.co/SOATMundial.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SOATMundialHttpGet" binding="tns:SOATMundialHttpGet">
+      <http:address location="http://vmlmasivos.mundialseguros.com.co/SOATMundial.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SOATMundialHttpPost" binding="tns:SOATMundialHttpPost">
+      <http:address location="http://vmlmasivos.mundialseguros.com.co/SOATMundial.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
